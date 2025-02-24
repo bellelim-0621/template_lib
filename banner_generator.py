@@ -63,7 +63,10 @@ if st.button("Generate Banner"):
     # Display the generated banner
     st.image(banner_image, caption="Generated Banner", use_column_width=True)
 
-    # Provide embed code
-    st.subheader("Embed Code")
-    embed_code = f'<iframe src="{banner_image_url}" width="600" height="220" frameborder="0"></iframe>'
-    st.code(embed_code, language='html')
+    # Add download button for the generated banner
+    st.download_button(
+        label="Download Banner Image",
+        data=banner_image,
+        file_name="generated_banner.png",
+        mime="image/png"
+    )
